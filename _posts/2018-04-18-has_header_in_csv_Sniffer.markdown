@@ -71,23 +71,23 @@ Beancount
 
 \|--Csv
 
-&nbsp&nbsp&nbsp&nbsp\|--2018-01-2.csv (非初始化文件，后续生成，仅用于演示)
+    \|--2018-01-2.csv (非初始化文件，后续生成，仅用于演示)
 
 \|--Data
 
-&nbsp&nbsp&nbsp&nbsp\|--accounts.beancount
+    \|--accounts.beancount
 
-&nbsp&nbsp&nbsp&nbsp\|--2018.beancount
+    \|--2018.beancount
 
-&nbsp&nbsp&nbsp&nbsp\|--2018-01-1.beancount (非初始化文件，后续生成，仅用于演示)
+    \|--2018-01-1.beancount (非初始化文件，后续生成，仅用于演示)
 
-&nbsp&nbsp&nbsp&nbsp\|--2018-01-2.beancount (非初始化文件，后续生成，仅用于演示)
+    \|--2018-01-2.beancount (非初始化文件，后续生成，仅用于演示)
 
 \|--Importers
 
-&nbsp&nbsp&nbsp&nbsp\|--\__init__.py
+    \|--\__init__.py
 
-&nbsp&nbsp&nbsp&nbsp\|--alipay.py
+    \|--alipay.py
 
 \|--my.config
 
