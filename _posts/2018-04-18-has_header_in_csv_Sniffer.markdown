@@ -67,34 +67,22 @@ pip install fava
 
 项目的目录结构：
 
+```
 Beancount
-
-\|--Csv
-
-    \|--2018-01-2.csv (非初始化文件，后续生成，仅用于演示)
-
-\|--Data
-
-    \|--accounts.beancount
-
-    \|--2018.beancount
-
-    \|--2018-01-1.beancount (非初始化文件，后续生成，仅用于演示)
-
-    \|--2018-01-2.beancount (非初始化文件，后续生成，仅用于演示)
-
-\|--Importers
-
-    \|--\__init__.py
-
-    \|--alipay.py
-
-\|--my.config
-
-\|--strip_blank.py
-
-\|--processing.sh
-
+|--Csv
+    |--2018-01-2.csv (非初始化文件，后续生成，仅用于演示)
+|--Data
+    |--accounts.beancount
+    |--2018.beancount
+    |--2018-01-1.beancount (非初始化文件，后续生成，仅用于演示)
+    |--2018-01-2.beancount (非初始化文件，后续生成，仅用于演示)
+|--Importers
+    |--\__init__.py
+    |--alipay.py
+|--my.config
+|--strip_blank.py
+|--processing.sh
+```
 
 [此处](https://github.com/lidongchao/BeancountSample)是已建好的目录结构
 
