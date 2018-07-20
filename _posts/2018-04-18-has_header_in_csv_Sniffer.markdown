@@ -69,31 +69,31 @@ pip install fava
 
 Beancount
 
-|--Csv
+\|--Csv
 
-&nbsp&nbsp&nbsp&nbsp|--2018-01-2.csv (非初始化文件，后续生成，仅用于演示)
+&nbsp&nbsp&nbsp&nbsp\|--2018-01-2.csv (非初始化文件，后续生成，仅用于演示)
 
-|--Data
+\|--Data
 
-&nbsp&nbsp&nbsp&nbsp|--accounts.beancount
+&nbsp&nbsp&nbsp&nbsp\|--accounts.beancount
 
-&nbsp&nbsp&nbsp&nbsp|--2018.beancount
+&nbsp&nbsp&nbsp&nbsp\|--2018.beancount
 
-&nbsp&nbsp&nbsp&nbsp|--2018-01-1.beancount (非初始化文件，后续生成，仅用于演示)
+&nbsp&nbsp&nbsp&nbsp\|--2018-01-1.beancount (非初始化文件，后续生成，仅用于演示)
 
-&nbsp&nbsp&nbsp&nbsp|--2018-01-2.beancount (非初始化文件，后续生成，仅用于演示)
+&nbsp&nbsp&nbsp&nbsp\|--2018-01-2.beancount (非初始化文件，后续生成，仅用于演示)
 
-|--Importers
+\|--Importers
 
-&nbsp&nbsp&nbsp&nbsp|--\__init__.py
+&nbsp&nbsp&nbsp&nbsp\|--\__init__.py
 
-&nbsp&nbsp&nbsp&nbsp|--alipay.py
+&nbsp&nbsp&nbsp&nbsp\|--alipay.py
 
-|--my.config
+\|--my.config
 
-|--strip_blank.py
+\|--strip_blank.py
 
-|--processing.sh
+\|--processing.sh
 
 
 [此处](https://github.com/lidongchao/BeancountSample)是已建好的目录结构
