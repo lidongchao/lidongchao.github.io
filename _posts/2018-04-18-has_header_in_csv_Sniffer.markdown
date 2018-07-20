@@ -1,4 +1,15 @@
-Beancount使用经验 && 通过Beancount导入支付宝csv账单
+---
+layout:     post
+title:      "Beancount使用经验"
+subtitle:   "通过Beancount导入支付宝csv账单"
+date:       2018-07-20
+author:     "Li Dongchao"
+header-img: "img/default-post-bg.jpg"
+tags:
+    - Beancount
+---
+
+
 
 # 一 背景
 
@@ -45,21 +56,22 @@ pip install fava
 
 ```[time] pad [account] [equity-account]```
 
+
 ## 1.4 初始化
 
 项目的目录结构：
 
 Beancount
 |--Csv
-    |--2018-01-2.csv (非初始化文件，后续生成，仅用于演示)
+&nbsp&nbsp&nbsp&nbsp|--2018-01-2.csv (非初始化文件，后续生成，仅用于演示)
 |--Data
-    |--accounts.beancount
-    |--2018.beancount
-    |--2018-01-1.beancount (非初始化文件，后续生成，仅用于演示)
-    |--2018-01-2.beancount (非初始化文件，后续生成，仅用于演示)
+&nbsp&nbsp&nbsp&nbsp|--accounts.beancount
+&nbsp&nbsp&nbsp&nbsp|--2018.beancount
+&nbsp&nbsp&nbsp&nbsp|--2018-01-1.beancount (非初始化文件，后续生成，仅用于演示)
+&nbsp&nbsp&nbsp&nbsp|--2018-01-2.beancount (非初始化文件，后续生成，仅用于演示)
 |--Importers
-    |--\__init__.py
-    |--alipay.py
+&nbsp&nbsp&nbsp&nbsp|--\__init__.py
+&nbsp&nbsp&nbsp&nbsp|--alipay.py
 |--my.config
 |--strip_blank.py
 |--processing.sh
@@ -205,21 +217,7 @@ $ bean-extract my.config Csv/2018-01-2.csv > Data/2018-01-2.beancount
 
 ## 2.5 升级版
 
-结合前面2.3.2变更编码、2.3.3格式处理、2.4生成文件的三组操作，整合为processing.sh，内容如下
-```bash
-#!/bin/bash
-export var=$1
-export len=${#var}
-export file=${var:0:len-4}
-export dataprefix="Data/"
-export data=${dataprefix}${file##*/}
-iconv -f gbk -t UTF-8 $file.csv > ${file}_tmp.csv
-dos2unix ${file}_tmp.csv
-python strip_blank.py ${file}_tmp.csv > ${file}.csv
-rm ${file}_tmp.csv
-bean-extract my.config ${file}.csv > ${data}.beancount
-```
-
+结合前面2.3.2变更编码、2.3.3格式处理、2.4生成文件的三组操作，整合为[processing.sh](https://github.com/lidongchao/BeancountSample/blob/master/processing.sh)。
 因此可以运行如下命令一次性完成前三步的所有操作
 ```bash
 $ sh processing.sh Csv/2018-01-2.csv
@@ -253,7 +251,7 @@ AA可以分为两种情况，如果已还清，那么与退款类似，简单记
   Expenses:Daily:Food         -50.00 CNY
 ```
 如果没有还清，则稍微复杂一点。等到下一次记账周期再行补上。
-```
+```beancount
 2018-01-01 * "****饭店" "餐饮优惠券(招行信用卡)"
   Liabilities:CreditCard:CMB  -100.00 CNY
   Expenses:Daily:Food          50.00 CNY
@@ -264,7 +262,7 @@ AA可以分为两种情况，如果已还清，那么与退款类似，简单记
 ```
 - 投资及其所得。
 投资所得最好分为两部分，一部分为本金，另一部分为利息，方便后期统计。
-```
+```beancount
 2018-01-01 * "****有限责任公司" "定期理财赎回-****(支付宝)"
   Assets:VirtualCard:Alipay   30133.03 CNY
   Assets:MoneyFound:XXXXXX   -30000.00 CNY
@@ -296,7 +294,8 @@ include "2018-01-2.beancount"
 
 ## 3 可视化界面
 
-通过fava启动可视化界面，随后在浏览器输入localhost:5000，进入浏览界面。
+完成前述所有流程以后，开始欣赏自己的劳动成果吧。通过fava启动可视化界面，随后在浏览器输入localhost:5000，进入浏览界面。
+
 ```bash
 fava Data/2018.beancount
 ```
