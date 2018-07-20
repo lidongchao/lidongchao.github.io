@@ -44,17 +44,23 @@ pip install fava
 
 - 断言操作：在时间点[time]的0:00时刻，账户[account]持有[currency unit]货币的数量为[amount]。
 
-```[time] balance [account] [amount] [currency-unit]```
+```beancount
+[time] balance [account] [amount] [currency-unit]
+```
 
 - 账户操作：创立账户、备注账户、注销账户。
 
-```[time] open [account] [currency-unit]```
-```[time] note [account] [note]```
-```[time] close [account]```
+```beancount
+[time] open [account] [currency-unit]
+[time] note [account] [note]
+[time] close [account]
+```
 
 - 账户填充
 
-```[time] pad [account] [equity-account]```
+```beancount
+[time] pad [account] [equity-account]
+```
 
 
 ## 1.4 初始化
@@ -62,19 +68,33 @@ pip install fava
 项目的目录结构：
 
 Beancount
+
 |--Csv
+
 &nbsp&nbsp&nbsp&nbsp|--2018-01-2.csv (非初始化文件，后续生成，仅用于演示)
+
 |--Data
+
 &nbsp&nbsp&nbsp&nbsp|--accounts.beancount
+
 &nbsp&nbsp&nbsp&nbsp|--2018.beancount
+
 &nbsp&nbsp&nbsp&nbsp|--2018-01-1.beancount (非初始化文件，后续生成，仅用于演示)
+
 &nbsp&nbsp&nbsp&nbsp|--2018-01-2.beancount (非初始化文件，后续生成，仅用于演示)
+
 |--Importers
+
 &nbsp&nbsp&nbsp&nbsp|--\__init__.py
+
 &nbsp&nbsp&nbsp&nbsp|--alipay.py
+
 |--my.config
+
 |--strip_blank.py
+
 |--processing.sh
+
 
 [此处](https://github.com/lidongchao/BeancountSample)是已建好的目录结构
 
